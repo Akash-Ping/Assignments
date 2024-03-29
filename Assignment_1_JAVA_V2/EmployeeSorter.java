@@ -7,19 +7,19 @@ public class EmployeeSorter {
     
     public static void main(String[] args) {
         try {
-            // Read the CSV file and store employee data in a list
+           
             List<Employee> employees = readCSV("Employees.csv");
 
-            // Group employees by department    
+             
             Map<String, List<Employee>> departmentMap = groupByDepartment(employees);
 
-            // Sort employees within each department by salary
+            
             sortEmployeesBySalary(departmentMap);
 
-            // Print the sorted employees grouped by department
+            
             printSortedEmployees(departmentMap);
         } catch (IOException e) {
-            // Handle IOException by printing the error message
+            
             e.printStackTrace();
         }
     }
@@ -75,22 +75,22 @@ public class EmployeeSorter {
         String line;
         boolean headerSkipped = false;
     
-        // Read each line of the CSV file
+        
         while ((line = reader.readLine()) != null) {
-            // Skip the header line
+           
             if (!headerSkipped) {
                 headerSkipped = true;
                 continue;
             }
-            // Split the line by comma to extract employee information
+          
             String[] parts = line.split(",");
-            // Check if all necessary fields are present
+           
             if (parts.length < 5) {
-                // If not enough fields, skip this line and print an error message
+               
                 System.err.println("Skipping line: " + line + " - Not enough fields");
                 continue;
             }
-            // Extract employee data from the line
+            
             String firstName = parts[0].trim();
             String lastName = parts[1].trim();
             String department = parts[2].trim();
@@ -115,7 +115,7 @@ public class EmployeeSorter {
             // Create an Employee object and add it to the list
             employees.add(new Employee(firstName, lastName, department, position, salary));
         }
-        // Close the BufferedReader
+        
         reader.close();
         return employees;
     }
@@ -134,11 +134,11 @@ public class EmployeeSorter {
 
     // Method to group employees by department lexicographically
 private static Map<String, List<Employee>> groupByDepartment(List<Employee> employees) {
-    // Use TreeMap to automatically sort departments lexicographically
+    
     Map<String, List<Employee>> departmentMap = new TreeMap<>();
-    // Iterate over each employee
+    
     for (Employee employee : employees) {
-        // Compute the department map, creating a new list if department does not exist
+      
         departmentMap.computeIfAbsent(employee.getDepartment(), k -> new ArrayList<>()).add(employee);
     }
     return departmentMap;
@@ -146,21 +146,21 @@ private static Map<String, List<Employee>> groupByDepartment(List<Employee> empl
 
     // Method to sort employees within each department by salary
     private static void sortEmployeesBySalary(Map<String, List<Employee>> departmentMap) {
-        // Iterate over each department
+       
         for (List<Employee> employees : departmentMap.values()) {
-            // Sort employees within the department by salary
+           
             employees.sort(Comparator.comparingDouble(Employee::getSalary));
         }
     }
 
     // Method to print sorted employees grouped by department
     private static void printSortedEmployees(Map<String, List<Employee>> departmentMap) {
-        // Iterate over each department
+        
         for (Map.Entry<String, List<Employee>> entry : departmentMap.entrySet()) {
             System.out.println("Department: " + entry.getKey());
-            // Iterate over each employee in the department
+           
             for (Employee employee : entry.getValue()) {
-                // Print employee details
+                
                 System.out.println(employee);
             }
             System.out.println(); // Print an empty line after each department

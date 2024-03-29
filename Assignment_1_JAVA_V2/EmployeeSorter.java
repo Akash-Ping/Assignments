@@ -24,50 +24,7 @@ public class EmployeeSorter {
         }
     }
 
-    // // Method to read employee data from a CSV file : type 1
-    // private static List<Employee> readCSV(String filePath) throws IOException {
-    //     List<Employee> employees = new ArrayList<>();
-    //     BufferedReader reader = new BufferedReader(new FileReader(filePath));
-    //     String line;
-    //     boolean headerSkipped = false;
-    
-    //     // Read each line of the CSV file
-    //     while ((line = reader.readLine()) != null) {
-    //         // Skip the header line
-    //         if (!headerSkipped) {
-    //             headerSkipped = true;
-    //             continue;
-    //         }
-    //         // Split the line by comma to extract employee information
-    //         String[] parts = line.split(",");
-    //         // Check if all necessary fields are present
-    //         if (parts.length < 5) {
-    //             // If not enough fields, skip this line and print an error message
-    //             System.err.println("Skipping line: " + line + " - Not enough fields");
-    //             continue;
-    //         }
-    //         // Extract employee data from the line
-    //         String firstName = parts[0].trim();
-    //         String lastName = parts[1].trim();
-    //         String department = parts[2].trim();
-    //         String position = parts[3].trim();
-    //         double salary = 0.0; // Default salary if not provided or parse error
-    //         try {
-    //             // Parse the salary from the line
-    //             salary = Double.parseDouble(parts[4].trim());
-    //         } catch (NumberFormatException e) {
-    //             // Handle NumberFormatException if salary parsing fails
-    //             System.err.println("Error parsing salary for line: " + line);
-    //         }
-    //         // Create an Employee object and add it to the list
-    //         employees.add(new Employee(firstName, lastName, department, position, salary));
-    //     }
-    //     // Close the BufferedReader
-    //     reader.close();
-    //     return employees;
-    // }
-    
-
+   
     // Method to read employee data from a CSV file : type 2
     private static List<Employee> readCSV(String filePath) throws IOException {
         List<Employee> employees = new ArrayList<>();
@@ -97,7 +54,6 @@ public class EmployeeSorter {
             String position = parts[3].trim();
             double salary = 0.0; // Default salary if not provided or parse error
             try {
-                // Parse the salary from the line
                 String[] salaryParts = parts[4].trim().split("-");
                 if (salaryParts.length > 1) {
                     // If salary has a range, compare both values and pick the larger one
@@ -112,7 +68,7 @@ public class EmployeeSorter {
                 // Handle NumberFormatException if salary parsing fails
                 System.err.println("Error parsing salary for line: " + line);
             }
-            // Create an Employee object and add it to the list
+            
             employees.add(new Employee(firstName, lastName, department, position, salary));
         }
         
@@ -120,17 +76,6 @@ public class EmployeeSorter {
         return employees;
     }
     
-    
-    // Method to group employees by department
-    // private static Map<String, List<Employee>> groupByDepartment(List<Employee> employees) {
-    //     Map<String, List<Employee>> departmentMap = new HashMap<>();
-    //     // Iterate over each employee
-    //     for (Employee employee : employees) {
-    //         // Compute the department map, creating a new list if department does not exist
-    //         departmentMap.computeIfAbsent(employee.getDepartment(), k -> new ArrayList<>()).add(employee);
-    //     }
-    //     return departmentMap;
-    // }
 
     // Method to group employees by department lexicographically
 private static Map<String, List<Employee>> groupByDepartment(List<Employee> employees) {

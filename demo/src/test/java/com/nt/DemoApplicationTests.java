@@ -28,7 +28,7 @@ class DemoApplicationTests {
   }
 
   @Test
-  public void addEmployeeeTest() {
+  public void adEmployeeeTest() {
     Employee employee = new Employee("Sagar Kalthiya", "sagar124@nucleusteq.com", "Sagar123");
     Employee savedEmployee = employeeRepository.saveAndFlush(employee);
     assertEquals(employee, savedEmployee);

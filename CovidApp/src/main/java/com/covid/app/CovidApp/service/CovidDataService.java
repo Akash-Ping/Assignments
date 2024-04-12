@@ -6,39 +6,30 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 @Service
 public class CovidDataService {
 
     @Autowired
     RestTemplate restTemplate;
-    public Integer getCovidData(String cityName)
+    public String getCovidData(String state, String cityName)
     {
-        Map<String, String> stateCityMap=new
-                HashMap<>();
-        stateCityMap.put("Agra","Uttar Pradesh");
-        stateCityMap.put("Rampur","Uttar Pradesh");
-        stateCityMap.put("Noida","Uttar Pradesh");
-        stateCityMap.put("Hapur","Uttar Pradesh");
-        stateCityMap.put("Amritsar","Punjab");
-        stateCityMap.put("Barnala","Punjab");
-        stateCityMap.put("Bathinda","Punjab");
-        stateCityMap.put("Surat","Gujarat");
-        stateCityMap.put("Ahmedabad","Gujarat");
-        stateCityMap.put("Jharsuguda","Odisha");
-        stateCityMap.put("Balangir","Odisha");
-        stateCityMap.put("Sambalpur","Odisha");
+        String Ustate = state.substring(0,1).toUpperCase()+state.substring(1).toLowerCase();
+        String Ucity = cityName.substring(0,1).toUpperCase()+cityName.substring(1).toLowerCase();
 
         Map<String,Object> map = restTemplate.getForObject(Util.COVID_DATA_API, Map.class);
 
-        Map<String, Object> cityObjectMap = (Map<String, Object>) map.get(stateCityMap.get(cityName));
-        Map<String, Object> districtData = (Map<String, Object>) cityObjectMap.get("districtData");
-        Map<String, Object> city = (Map<String, Object>) districtData.get(cityName);
+        Map<String, Object> stateObjectMap = (Map<String, Object>) map.get(Ustate);
+        Map<String, Object> districtData = (Map<String, Object>) stateObjectMap.get("districtData");
+        Map<String, Object> city = (Map<String, Object>) districtData.get(Ucity);
         Integer active = (Integer) city.get("active");
-        return active;
+      
+
+        System.out.println(active);
+
+        return active+"";
+
 
 
     }
@@ -48,4 +39,22 @@ public class CovidDataService {
         return "Data";
     }
 
+//    public int calculateTotalCases() {
+//        Map<String, Object> map = restTemplate.getForObject(Util.COVID_DATA_API, Map.class);
+//        int totalCases = 0;
+//
+//        for (Object stateObject : map.values()) {
+//            Map<String, Object> stateMap = (Map<String, Object>) stateObject;
+//            Map<String, Object> districtData = (Map<String, Object>) stateMap.get("districtData");
+//
+//            for (Object cityObject : districtData.values()) {
+//                Map<String, Object> cityMap = (Map<String, Object>) cityObject;
+//                Integer activeCases = (Integer) cityMap.get("active");
+//                totalCases += activeCases;
+//            }
+//        }
+//
+//        return totalCases;
+//
+//    }
 }

@@ -39,4 +39,22 @@ public class CovidDataService {
         return "Data";
     }
 
+//    public int calculateTotalCases() {
+//        Map<String, Object> map = restTemplate.getForObject(Util.COVID_DATA_API, Map.class);
+//        int totalCases = 0;
+//
+//        for (Object stateObject : map.values()) {
+//            Map<String, Object> stateMap = (Map<String, Object>) stateObject;
+//            Map<String, Object> districtData = (Map<String, Object>) stateMap.get("districtData");
+//
+//            for (Object cityObject : districtData.values()) {
+//                Map<String, Object> cityMap = (Map<String, Object>) cityObject;
+//                Integer activeCases = (Integer) cityMap.get("active");
+//                totalCases += activeCases;
+//            }
+//        }
+//
+//        return totalCases;
+//
+//    }
 }

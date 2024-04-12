@@ -121,6 +121,7 @@
     <div class="container">
       <h1>COVID-19 Data</h1>
       <form id="city-form">
+        <input type="text" id="state" placeholder="Enter state name" required />
         <input type="text" id="city" placeholder="Enter city name" required />
         <button type="submit">Get Data</button>
       </form>
@@ -136,6 +137,7 @@
 
     <script>
       const cityForm = document.getElementById("city-form");
+      const stateInput = document.getElementById("state");
       const cityInput = document.getElementById("city");
       const resultDiv = document.getElementById("result");
       const loadingDiv = document.getElementById("loading");
@@ -143,15 +145,17 @@
 
       cityForm.addEventListener("submit", function (event) {
         event.preventDefault();
+        const state = stateInput.value.trim();
         const city = cityInput.value.trim();
-        fetchData(city);
+        fetchData(state, city);
+        
       });
 
-      function fetchData(city) {
+      function fetchData(state,city) {
         showLoading();
         hideError();
 
-        fetch(`http://localhost:8080/covid-data/citywise/${city}`)
+        fetch(`http://localhost:8080/covid-data/${state}/${city}`)
           .then((response) => {
             if (!response.ok) {
               throw new Error("Network response was not ok");

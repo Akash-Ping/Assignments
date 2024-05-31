@@ -13,5 +13,5 @@ This repository contains all the assignments and projects made during the traini
 - [SpringBoot CRUD App](https://github.com/Akash-Ping/Assignments/tree/CRUD_App)
  - [Covid App using SpringBoot](https://github.com/Akash-Ping/Assignments/tree/Covid_App)
 - [Docker CRUD App](https://github.com/Akash-Ping/Assignments/tree/Docker_Practice)
- - [Capstone Project : Employee Management Portal](https://github.com/Akash-Ping/Assignments/tree/Capstone_Project_Employee_Management_Portal)
+ - [Capstone Project : Employee Management Portal](https://github.com/Akash-Ping/Assignments/tree/Capstone_Employee_Management_Portal_Project)
 

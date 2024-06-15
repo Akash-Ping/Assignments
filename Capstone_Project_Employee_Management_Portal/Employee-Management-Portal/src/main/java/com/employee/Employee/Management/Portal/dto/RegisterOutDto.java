@@ -17,7 +17,7 @@ public class RegisterOutDto {
     private String email;
     private String empId;
     private String location;
-//    private String password;
+    //    private String password;
     private Role role;
     private Long EmpProjectId;
 

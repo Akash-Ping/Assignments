@@ -37,6 +37,10 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 <th class="coverageStat 
 ">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
   Line, %
 </th>
 </tr>
@@ -60,10 +64,18 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
 <td class="coverageStat">
   <span class="percent">
+    50%
+  </span>
+  <span class="absValue">
+    (18/36)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
     100%
   </span>
   <span class="absValue">
-    (39/39)
+    (53/53)
   </span>
 </td>
 </tr>
@@ -78,27 +90,52 @@ Current scope:     <a href="../../index.html">all classes</a>
 <code class="sourceCode" id="sourceCode">&nbsp;package com.employee.Employee.Management.Portal.dto;
 &nbsp;
 &nbsp;import com.employee.Employee.Management.Portal.entity.Role;
-&nbsp;import com.employee.Employee.Management.Portal.entity.Skills;
-&nbsp;import jakarta.persistence.*;
+&nbsp;import jakarta.validation.constraints.Email;
+&nbsp;import jakarta.validation.constraints.NotBlank;
+&nbsp;import jakarta.validation.constraints.NotNull;
 &nbsp;
-&nbsp;import java.util.List;
 &nbsp;import java.util.Objects;
 &nbsp;import java.util.Set;
 &nbsp;
 <b class="fc">&nbsp;public class RegisterDto {</b>
 &nbsp;
 &nbsp;    private Long id;
+&nbsp;
+&nbsp;    @NotBlank(message = &quot;Name is required&quot;)
 &nbsp;    private String name;
+&nbsp;
+&nbsp;    @NotBlank(message = &quot;Contact number is required&quot;)
 &nbsp;    private String contactNo;
+&nbsp;
+&nbsp;    @NotBlank(message = &quot;Date of birth is required&quot;)
 &nbsp;    private String dob;
+&nbsp;
+&nbsp;    @NotBlank(message = &quot;Date of joining is required&quot;)
 &nbsp;    private String doj;
+&nbsp;
+&nbsp;    @NotBlank(message = &quot;Designation is required&quot;)
 &nbsp;    private String designation;
+&nbsp;
+&nbsp;    @Email(message = &quot;Email should be valid&quot;)
+&nbsp;    @NotBlank(message = &quot;Email is required&quot;)
 &nbsp;    private String email;
+&nbsp;
+&nbsp;    @NotBlank(message = &quot;Employee ID is required&quot;)
 &nbsp;    private String empId;
+&nbsp;
+&nbsp;    @NotBlank(message = &quot;Location is required&quot;)
 &nbsp;    private String location;
+&nbsp;
+&nbsp;    @NotBlank(message = &quot;Password is required&quot;)
 &nbsp;    private String password;
+&nbsp;
+&nbsp;    @NotNull(message = &quot;Role is required&quot;)
 &nbsp;    private Role role;
+&nbsp;
+&nbsp;    //    @NotNull(message = &quot;Manager ID is required&quot;)
 &nbsp;    private Long EmpManagerId;
+&nbsp;
+&nbsp;    //    @NotNull(message = &quot;Project ID is required&quot;)
 &nbsp;    private Long EmpProjectId;
 &nbsp;
 &nbsp;    private String ManagerName;
@@ -107,12 +144,13 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;        return ProjectName;</b>
 &nbsp;    }
 &nbsp;
-&nbsp;    public void setProjectName(String projectName) {
+&nbsp;    public void setProjectName(final String projectName) {
 <b class="fc">&nbsp;        ProjectName = projectName;</b>
 &nbsp;    }
 &nbsp;
 &nbsp;    private String ProjectName;
 &nbsp;
+&nbsp;    @NotNull(message = &quot;Assigned skills are required&quot;)
 &nbsp;    private Set&lt;Long&gt; assignedSkills;
 &nbsp;
 &nbsp;
@@ -120,7 +158,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;        return id;</b>
 &nbsp;    }
 &nbsp;
-&nbsp;    public void setId(Long id) {
+&nbsp;    public void setId(final Long id) {
 <b class="fc">&nbsp;        this.id = id;</b>
 &nbsp;    }
 &nbsp;
@@ -128,7 +166,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;        return name;</b>
 &nbsp;    }
 &nbsp;
-&nbsp;    public void setName(String name) {
+&nbsp;    public void setName(final String name) {
 <b class="fc">&nbsp;        this.name = name;</b>
 &nbsp;    }
 &nbsp;
@@ -136,7 +174,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;        return contactNo;</b>
 &nbsp;    }
 &nbsp;
-&nbsp;    public void setContactNo(String contactNo) {
+&nbsp;    public void setContactNo(final String contactNo) {
 <b class="fc">&nbsp;        this.contactNo = contactNo;</b>
 &nbsp;    }
 &nbsp;
@@ -144,7 +182,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;        return dob;</b>
 &nbsp;    }
 &nbsp;
-&nbsp;    public void setDob(String dob) {
+&nbsp;    public void setDob(final String dob) {
 <b class="fc">&nbsp;        this.dob = dob;</b>
 &nbsp;    }
 &nbsp;
@@ -152,7 +190,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;        return doj;</b>
 &nbsp;    }
 &nbsp;
-&nbsp;    public void setDoj(String doj) {
+&nbsp;    public void setDoj(final String doj) {
 <b class="fc">&nbsp;        this.doj = doj;</b>
 &nbsp;    }
 &nbsp;
@@ -160,7 +198,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;        return designation;</b>
 &nbsp;    }
 &nbsp;
-&nbsp;    public void setDesignation(String designation) {
+&nbsp;    public void setDesignation(final String designation) {
 <b class="fc">&nbsp;        this.designation = designation;</b>
 &nbsp;    }
 &nbsp;
@@ -168,7 +206,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;        return email;</b>
 &nbsp;    }
 &nbsp;
-&nbsp;    public void setEmail(String email) {
+&nbsp;    public void setEmail(final String email) {
 <b class="fc">&nbsp;        this.email = email;</b>
 &nbsp;    }
 &nbsp;
@@ -176,7 +214,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;        return empId;</b>
 &nbsp;    }
 &nbsp;
-&nbsp;    public void setEmpId(String empId) {
+&nbsp;    public void setEmpId(final String empId) {
 <b class="fc">&nbsp;        this.empId = empId;</b>
 &nbsp;    }
 &nbsp;
@@ -184,7 +222,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;        return location;</b>
 &nbsp;    }
 &nbsp;
-&nbsp;    public void setLocation(String location) {
+&nbsp;    public void setLocation(final String location) {
 <b class="fc">&nbsp;        this.location = location;</b>
 &nbsp;    }
 &nbsp;
@@ -192,7 +230,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;        return password;</b>
 &nbsp;    }
 &nbsp;
-&nbsp;    public void setPassword(String password) {
+&nbsp;    public void setPassword(final String password) {
 <b class="fc">&nbsp;        this.password = password;</b>
 &nbsp;    }
 &nbsp;
@@ -200,7 +238,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;        return role;</b>
 &nbsp;    }
 &nbsp;
-&nbsp;    public void setRole(Role role) {
+&nbsp;    public void setRole(final Role role) {
 <b class="fc">&nbsp;        this.role = role;</b>
 &nbsp;    }
 &nbsp;
@@ -208,7 +246,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;        return EmpManagerId;</b>
 &nbsp;    }
 &nbsp;
-&nbsp;    public void setEmpManagerId(Long empManagerId) {
+&nbsp;    public void setEmpManagerId(final Long empManagerId) {
 <b class="fc">&nbsp;        EmpManagerId = empManagerId;</b>
 &nbsp;    }
 &nbsp;
@@ -216,7 +254,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;        return EmpProjectId;</b>
 &nbsp;    }
 &nbsp;
-&nbsp;    public void setEmpProjectId(Long empProjectId) {
+&nbsp;    public void setEmpProjectId(final Long empProjectId) {
 <b class="fc">&nbsp;        EmpProjectId = empProjectId;</b>
 &nbsp;    }
 &nbsp;
@@ -224,7 +262,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;        return assignedSkills;</b>
 &nbsp;    }
 &nbsp;
-&nbsp;    public void setAssignedSkills(Set&lt;Long&gt; assignedSkills) {
+&nbsp;    public void setAssignedSkills(final Set&lt;Long&gt; assignedSkills) {
 <b class="fc">&nbsp;        this.assignedSkills = assignedSkills;</b>
 &nbsp;    }
 &nbsp;
@@ -232,43 +270,60 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;        return ManagerName;</b>
 &nbsp;    }
 &nbsp;
-&nbsp;    public void setManagerName(String ManagerName) {
+&nbsp;    public void setManagerName(final String ManagerName) {
 <b class="fc">&nbsp;        this.ManagerName = ManagerName;</b>
 &nbsp;    }
 &nbsp;
 &nbsp;    @Override
-&nbsp;    public boolean equals(Object o) {
-<b class="fc">&nbsp;        if (this == o) return true;</b>
-<b class="fc">&nbsp;        if (o == null || getClass() != o.getClass()) return false;</b>
+&nbsp;    public boolean equals(final Object o) {
+<b class="pc">&nbsp;        if (this == o) return true;</b>
+<b class="pc">&nbsp;        if (o == null || getClass() != o.getClass()) return false;</b>
 <b class="fc">&nbsp;        RegisterDto that = (RegisterDto) o;</b>
-<b class="fc">&nbsp;        return Objects.equals(id, that.id) &amp;&amp; Objects.equals(name, that.name) &amp;&amp; Objects.equals(contactNo, that.contactNo) &amp;&amp; Objects.equals(dob, that.dob) &amp;&amp; Objects.equals(doj, that.doj) &amp;&amp; Objects.equals(designation, that.designation) &amp;&amp; Objects.equals(email, that.email) &amp;&amp; Objects.equals(empId, that.empId) &amp;&amp; Objects.equals(location, that.location) &amp;&amp; Objects.equals(password, that.password) &amp;&amp; role == that.role &amp;&amp; Objects.equals(EmpManagerId, that.EmpManagerId) &amp;&amp; Objects.equals(EmpProjectId, that.EmpProjectId) &amp;&amp; Objects.equals(ManagerName, that.ManagerName) &amp;&amp; Objects.equals(ProjectName, that.ProjectName) &amp;&amp; Objects.equals(assignedSkills, that.assignedSkills);</b>
+<b class="pc">&nbsp;        return Objects.equals(id, that.id)</b>
+<b class="pc">&nbsp;                &amp;&amp; Objects.equals(name, that.name)</b>
+<b class="pc">&nbsp;                &amp;&amp; Objects.equals(contactNo, that.contactNo)</b>
+<b class="pc">&nbsp;                &amp;&amp; Objects.equals(dob, that.dob)</b>
+<b class="pc">&nbsp;                &amp;&amp; Objects.equals(doj, that.doj)</b>
+<b class="pc">&nbsp;                &amp;&amp; Objects.equals(designation, that.designation)</b>
+<b class="pc">&nbsp;                &amp;&amp; Objects.equals(email, that.email)</b>
+<b class="pc">&nbsp;                &amp;&amp; Objects.equals(empId, that.empId)</b>
+<b class="pc">&nbsp;                &amp;&amp; Objects.equals(location, that.location)</b>
+<b class="pc">&nbsp;                &amp;&amp; Objects.equals(password, that.password)</b>
+&nbsp;                &amp;&amp; role == that.role
+<b class="pc">&nbsp;                &amp;&amp; Objects.equals(EmpManagerId, that.EmpManagerId)</b>
+<b class="pc">&nbsp;                &amp;&amp; Objects.equals(EmpProjectId, that.EmpProjectId)</b>
+<b class="pc">&nbsp;                &amp;&amp; Objects.equals(ManagerName, that.ManagerName)</b>
+<b class="pc">&nbsp;                &amp;&amp; Objects.equals(ProjectName, that.ProjectName)</b>
+<b class="fc">&nbsp;                &amp;&amp; Objects.equals(assignedSkills, that.assignedSkills);</b>
 &nbsp;    }
 &nbsp;
 &nbsp;    @Override
 &nbsp;    public int hashCode() {
-<b class="fc">&nbsp;        return Objects.hash(id, name, contactNo, dob, doj, designation, email, empId, location, password, role, EmpManagerId, EmpProjectId, ManagerName, ProjectName, assignedSkills);</b>
+<b class="fc">&nbsp;        return Objects.hash(id, name, contactNo, dob, doj, designation,</b>
+&nbsp;                email, empId, location, password, role, EmpManagerId, EmpProjectId,
+&nbsp;                ManagerName, ProjectName, assignedSkills);
 &nbsp;    }
 &nbsp;
 &nbsp;    @Override
 &nbsp;    public String toString() {
-<b class="fc">&nbsp;        return &quot;RegisterDto{&quot; +</b>
-&nbsp;                &quot;id=&quot; + id +
-&nbsp;                &quot;, name=&#39;&quot; + name + &#39;\&#39;&#39; +
-&nbsp;                &quot;, contactNo=&#39;&quot; + contactNo + &#39;\&#39;&#39; +
-&nbsp;                &quot;, dob=&#39;&quot; + dob + &#39;\&#39;&#39; +
-&nbsp;                &quot;, doj=&#39;&quot; + doj + &#39;\&#39;&#39; +
-&nbsp;                &quot;, designation=&#39;&quot; + designation + &#39;\&#39;&#39; +
-&nbsp;                &quot;, email=&#39;&quot; + email + &#39;\&#39;&#39; +
-&nbsp;                &quot;, empId=&#39;&quot; + empId + &#39;\&#39;&#39; +
-&nbsp;                &quot;, location=&#39;&quot; + location + &#39;\&#39;&#39; +
-&nbsp;                &quot;, password=&#39;&quot; + password + &#39;\&#39;&#39; +
-&nbsp;                &quot;, role=&quot; + role +
-&nbsp;                &quot;, EmpManagerId=&quot; + EmpManagerId +
-&nbsp;                &quot;, EmpProjectId=&quot; + EmpProjectId +
-&nbsp;                &quot;, ManagerName=&#39;&quot; + ManagerName + &#39;\&#39;&#39; +
-&nbsp;                &quot;, ProjectName=&#39;&quot; + ProjectName + &#39;\&#39;&#39; +
-&nbsp;                &quot;, assignedSkills=&quot; + assignedSkills +
-&nbsp;                &#39;}&#39;;
+<b class="fc">&nbsp;        return &quot;RegisterDto{&quot;</b>
+&nbsp;                + &quot;id=&quot; + id
+&nbsp;                + &quot;, name=&#39;&quot; + name + &#39;\&#39;&#39;
+&nbsp;                + &quot;, contactNo=&#39;&quot; + contactNo + &#39;\&#39;&#39;
+&nbsp;                + &quot;, dob=&#39;&quot; + dob + &#39;\&#39;&#39;
+&nbsp;                + &quot;, doj=&#39;&quot; + doj + &#39;\&#39;&#39;
+&nbsp;                + &quot;, designation=&#39;&quot; + designation + &#39;\&#39;&#39;
+&nbsp;                + &quot;, email=&#39;&quot; + email + &#39;\&#39;&#39;
+&nbsp;                + &quot;, empId=&#39;&quot; + empId + &#39;\&#39;&#39;
+&nbsp;                + &quot;, location=&#39;&quot; + location + &#39;\&#39;&#39;
+&nbsp;                + &quot;, password=&#39;&quot; + password + &#39;\&#39;&#39;
+&nbsp;                + &quot;, role=&quot; + role
+&nbsp;                + &quot;, EmpManagerId=&quot; + EmpManagerId
+&nbsp;                + &quot;, EmpProjectId=&quot; + EmpProjectId
+&nbsp;                + &quot;, ManagerName=&#39;&quot; + ManagerName + &#39;\&#39;&#39;
+&nbsp;                + &quot;, ProjectName=&#39;&quot; + ProjectName + &#39;\&#39;&#39;
+&nbsp;                + &quot;, assignedSkills=&quot; + assignedSkills
+&nbsp;                + &#39;}&#39;;
 &nbsp;    }
 &nbsp;}
 </code>
@@ -294,7 +349,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2024-05-27 11:01</div>
+    <div style="float:right;">generated on 2024-06-16 00:16</div>
 </div>
 </body>
 </html>

@@ -1,10 +1,12 @@
 package com.employee.Employee.Management.Portal;
 
-import com.employee.Employee.Management.Portal.exception.CustomErrorResponse;
+import com.employee.Employee.Management.Portal.exception.WrongInputException;
+import com.employee.Employee.Management.Portal.exception.InvalidEmailDomainException;
 import com.employee.Employee.Management.Portal.exception.DataAlreadyExistsException;
 import com.employee.Employee.Management.Portal.exception.DataNotFoundException;
-import com.employee.Employee.Management.Portal.exception.WrongInputException;
+import com.employee.Employee.Management.Portal.exception.CustomErrorResponse;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -34,6 +36,13 @@ public class GlobalExceptionHandler {
         return new CustomErrorResponse(ex.getMessage());
     }
 
+    @ExceptionHandler(InvalidEmailDomainException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ResponseBody
+    public CustomErrorResponse invalidEmailDomainExceptionHandler(final InvalidEmailDomainException ex) {
+        return new CustomErrorResponse(ex.getMessage());
+    }
+
     @ExceptionHandler(WrongInputException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ResponseBody
@@ -45,21 +54,20 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ResponseBody
-    public CustomErrorResponse exceptionHandler(final Exception ex) {
-        return new CustomErrorResponse(ex.getMessage());
+    public ResponseEntity<String> handleGenericException(Exception e) {
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An unexpected error occurred: " + e.getMessage());
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ResponseBody
-    public Map<String, String> handleEmptyDataValidation(
-            final MethodArgumentNotValidException ex) {
-        Map<String, String> resp = new HashMap<>();
-        ex.getBindingResult().getAllErrors().forEach((error) -> {
+    public ResponseEntity<Map<String, String>> handleValidationExceptions(MethodArgumentNotValidException ex) {
+        Map<String, String> errors = new HashMap<>();
+        ex.getBindingResult().getAllErrors().forEach(error -> {
             String fieldName = ((FieldError) error).getField();
-            String message = error.getDefaultMessage();
-            resp.put(fieldName, message);
+            String errorMessage = error.getDefaultMessage();
+            errors.put(fieldName, errorMessage);
         });
-        return resp;
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errors);
     }
 }

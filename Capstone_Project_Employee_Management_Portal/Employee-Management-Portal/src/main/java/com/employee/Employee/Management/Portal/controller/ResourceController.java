@@ -44,7 +44,7 @@ public class ResourceController {
 
     @PostMapping("/requestResource/isRequested")
     public RequestedOutDto isRequested(
-             @RequestBody final RequestedDto requestedDto) {
+            @RequestBody final RequestedDto requestedDto) {
         logger.info("Started is requested controller");
         RequestedOutDto requestedOutDto = requestResourceService
                 .isRequested(requestedDto);

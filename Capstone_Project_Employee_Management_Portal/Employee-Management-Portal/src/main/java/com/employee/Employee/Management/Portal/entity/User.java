@@ -109,12 +109,12 @@ public class User {
         return getId() != null && Objects.equals(getId(), user.getId());
     }
 
-@Override
-public int hashCode() {
-    return Objects.hash(
-            name, contactNo, dob, doj, designation, email, empId, location, password,
-            role, assignedSkills, empManagerId, empProjectId
-    );
-}
+    @Override
+    public int hashCode() {
+        return Objects.hash(
+                name, contactNo, dob, doj, designation, email, empId, location, password,
+                role, assignedSkills, empManagerId, empProjectId
+        );
+    }
 
 }

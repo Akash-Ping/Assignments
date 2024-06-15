@@ -72,11 +72,11 @@ public class EmployeeService {
 
     // Check for the skills of the employee and update the skills
     // very verY important
-    public ApiResponseDto updateSkill(final String userId,
+    public ApiResponseDto updateSkill(final String email,
                                       final Set<Long> skillIdsToAdd,
                                       final Set<Long> skillIdsToRemove) {
-        User user = userRepository.findByEmpId(userId)
-                .orElseThrow(() -> new EntityNotFoundException("User not found with id: " + userId));
+        User user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new EntityNotFoundException("User not found with id: " + email));
 
         // Add new skills
         for (Long skillId : skillIdsToAdd) {
@@ -99,7 +99,7 @@ public class EmployeeService {
         return new ApiResponseDto("User skills updated successfully"); // Provide appropriate response
 
 
-}
+    }
 
     public ApiResponseDto updatePassword(final String email, final RegisterDto registerDto) {
         User user = userRepository.findByEmail(email)

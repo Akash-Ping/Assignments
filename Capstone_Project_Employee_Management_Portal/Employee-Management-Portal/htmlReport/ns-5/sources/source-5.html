@@ -34,6 +34,10 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 <th class="coverageStat 
 ">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
   Line, %
 </th>
 </tr>
@@ -49,18 +53,38 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    96.4%
+    75%
   </span>
   <span class="absValue">
-    (27/28)
+    (9/12)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    90%
+  </span>
+  <span class="absValue">
+    (27/30)
   </span>
 </td>
 </tr>
   <tr>
-    <td class="name">User$HibernateInstantiator$wxI8VAQa</td>
+    <td class="name">User$HibernateInstantiator$bhsdyXKn</td>
   </tr>
   <tr>
-    <td class="name">User$HibernateProxy$SWASEg5s</td>
+    <td class="name">User$HibernateInstantiator$mUxljvzW</td>
+  </tr>
+  <tr>
+    <td class="name">User$HibernateInstantiator$uULF8jOI</td>
+  </tr>
+  <tr>
+    <td class="name">User$HibernateProxy$3F9Lmrp1</td>
+  </tr>
+  <tr>
+    <td class="name">User$HibernateProxy$eHu68Ec8</td>
+  </tr>
+  <tr>
+    <td class="name">User$HibernateProxy$RMaZQCmt</td>
   </tr>
 <tr>
   <td class="name"><strong>Total</strong></td>
@@ -74,10 +98,18 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    96.4%
+    75%
   </span>
   <span class="absValue">
-    (27/28)
+    (9/12)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    90%
+  </span>
+  <span class="absValue">
+    (27/30)
   </span>
 </td>
 </tr>
@@ -91,8 +123,24 @@ Current scope:     <a href="../../index.html">all classes</a>
 <code class="sourceCode" id="sourceCode">&nbsp;package com.employee.Employee.Management.Portal.entity;
 &nbsp;
 &nbsp;import com.fasterxml.jackson.annotation.JsonManagedReference;
-&nbsp;import jakarta.persistence.*;
-&nbsp;import lombok.*;
+&nbsp;import jakarta.persistence.Entity;
+&nbsp;import jakarta.persistence.Table;
+&nbsp;import jakarta.persistence.Id;
+&nbsp;import jakarta.persistence.GeneratedValue;
+&nbsp;import jakarta.persistence.GenerationType;
+&nbsp;import jakarta.persistence.Column;
+&nbsp;import jakarta.persistence.ManyToMany;
+&nbsp;import jakarta.persistence.JoinTable;
+&nbsp;import jakarta.persistence.JoinColumn;
+&nbsp;import jakarta.persistence.EnumType;
+&nbsp;import jakarta.persistence.Enumerated;
+&nbsp;import jakarta.persistence.CascadeType;
+&nbsp;import jakarta.persistence.FetchType;
+&nbsp;import jakarta.persistence.OneToMany;
+&nbsp;import lombok.AllArgsConstructor;
+&nbsp;import lombok.Getter;
+&nbsp;import lombok.Setter;
+&nbsp;import lombok.ToString;
 &nbsp;import org.hibernate.proxy.HibernateProxy;
 &nbsp;
 &nbsp;import java.util.HashSet;
@@ -145,7 +193,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;
 &nbsp;
 <b class="fc">&nbsp;    @JsonManagedReference</b>
-&nbsp;    @ManyToMany( fetch = FetchType.EAGER )
+&nbsp;    @ManyToMany(fetch = FetchType.EAGER)
 &nbsp;    @JoinTable(
 &nbsp;            name = &quot;user_skill&quot;,
 &nbsp;            joinColumns = @JoinColumn(name = &quot;user_id&quot;),
@@ -168,159 +216,28 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;        super();</b>
 &nbsp;    }
 &nbsp;
-&nbsp;//    public User(Long id, String name, String contactNo, String dob, String doj, String designation, String email, String empId, String location, String password, Role role, List&lt;Skills&gt; assignedSkills, Long empManagerId, Long empProjectId) {
-&nbsp;//        this.id = id;
-&nbsp;//        this.name = name;
-&nbsp;//        this.contactNo = contactNo;
-&nbsp;//        this.dob = dob;
-&nbsp;//        this.doj = doj;
-&nbsp;//        this.designation = designation;
-&nbsp;//        this.email = email;
-&nbsp;//        this.empId = empId;
-&nbsp;//        this.location = location;
-&nbsp;//        this.password = password;
-&nbsp;//        this.role = role;
-&nbsp;//        this.assignedSkills = assignedSkills;
-&nbsp;//        this.EmpManagerId = empManagerId;
-&nbsp;//        this.EmpProjectId = empProjectId;
-&nbsp;//    }
-&nbsp;
-&nbsp;//    public Long getId() {
-&nbsp;//        return id;
-&nbsp;//    }
-&nbsp;//
-&nbsp;//    public void setId(Long id) {
-&nbsp;//        this.id = id;
-&nbsp;//    }
-&nbsp;//
-&nbsp;//    public String getName() {
-&nbsp;//        return name;
-&nbsp;//    }
-&nbsp;//
-&nbsp;//    public void setName(String name) {
-&nbsp;//        this.name = name;
-&nbsp;//    }
-&nbsp;//
-&nbsp;//    public String getContactNo() {
-&nbsp;//        return contactNo;
-&nbsp;//    }
-&nbsp;//
-&nbsp;//    public void setContactNo(String contactNo) {
-&nbsp;//        this.contactNo = contactNo;
-&nbsp;//    }
-&nbsp;//
-&nbsp;//    public String getDob() {
-&nbsp;//        return dob;
-&nbsp;//    }
-&nbsp;//
-&nbsp;//    public void setDob(String dob) {
-&nbsp;//        this.dob = dob;
-&nbsp;//    }
-&nbsp;//
-&nbsp;//    public String getDoj() {
-&nbsp;//        return doj;
-&nbsp;//    }
-&nbsp;//
-&nbsp;//    public void setDoj(String doj) {
-&nbsp;//        this.doj = doj;
-&nbsp;//    }
-&nbsp;//
-&nbsp;//    public String getDesignation() {
-&nbsp;//        return designation;
-&nbsp;//    }
-&nbsp;//
-&nbsp;//    public void setDesignation(String designation) {
-&nbsp;//        this.designation = designation;
-&nbsp;//    }
-&nbsp;//
-&nbsp;//    public String getEmail() {
-&nbsp;//        return email;
-&nbsp;//    }
-&nbsp;//
-&nbsp;//    public void setEmail(String email) {
-&nbsp;//        this.email = email;
-&nbsp;//    }
-&nbsp;//
-&nbsp;//    public String getEmpId() {
-&nbsp;//        return empId;
-&nbsp;//    }
-&nbsp;//
-&nbsp;//    public void setEmpId(String empId) {
-&nbsp;//        this.empId = empId;
-&nbsp;//    }
-&nbsp;//
-&nbsp;//    public String getLocation() {
-&nbsp;//        return location;
-&nbsp;//    }
-&nbsp;//
-&nbsp;//    public void setLocation(String location) {
-&nbsp;//        this.location = location;
-&nbsp;//    }
-&nbsp;//
-&nbsp;//    public String getPassword() {
-&nbsp;//        return password;
-&nbsp;//    }
-&nbsp;//
-&nbsp;//    public void setPassword(String password) {
-&nbsp;//        this.password = password;
-&nbsp;//    }
-&nbsp;//
-&nbsp;//    public Role getRole() {
-&nbsp;//        return role;
-&nbsp;//    }
-&nbsp;//
-&nbsp;//    public void setRole(Role role) {
-&nbsp;//        this.role = role;
-&nbsp;//    }
-&nbsp;//
-&nbsp;//    public Set&lt;Skills&gt; getAssignedSkills() {
-&nbsp;//        return assignedSkills;
-&nbsp;//    }
-&nbsp;//
-&nbsp;//    public void setAssignedSkills(Set&lt;Skills&gt; assignedSkills) {
-&nbsp;//        this.assignedSkills = assignedSkills;
-&nbsp;//    }
-&nbsp;//
-&nbsp;//    public Long getEmpManagerId() {
-&nbsp;//        return empManagerId;
-&nbsp;//    }
-&nbsp;//
-&nbsp;//    public void setEmpManagerId(Long empManagerId) {
-&nbsp;//        empManagerId = empManagerId;
-&nbsp;//    }
-&nbsp;//
-&nbsp;//    public Long getEmpProjectId() {
-&nbsp;//        return empProjectId;
-&nbsp;//    }
-&nbsp;//
-&nbsp;//    public void setEmpProjectId(Long empProjectId) {
-&nbsp;//        empProjectId = empProjectId;
-&nbsp;//    }
 &nbsp;
 &nbsp;
 &nbsp;    @Override
-&nbsp;    public final boolean equals(Object o) {
+&nbsp;    public final boolean equals(final Object o) {
 <b class="fc">&nbsp;        if (this == o) return true;</b>
 <b class="fc">&nbsp;        if (o == null) return false;</b>
-<b class="fc">&nbsp;        Class&lt;?&gt; oEffectiveClass = o instanceof HibernateProxy ? ((HibernateProxy) o).getHibernateLazyInitializer().getPersistentClass() : o.getClass();</b>
-<b class="fc">&nbsp;        Class&lt;?&gt; thisEffectiveClass = this instanceof HibernateProxy ? ((HibernateProxy) this).getHibernateLazyInitializer().getPersistentClass() : this.getClass();</b>
+<b class="pc">&nbsp;        Class&lt;?&gt; oEffectiveClass = o instanceof HibernateProxy ? ((HibernateProxy) o)</b>
+<b class="nc">&nbsp;                .getHibernateLazyInitializer().getPersistentClass() : o.getClass();</b>
+<b class="pc">&nbsp;        Class&lt;?&gt; thisEffectiveClass = this instanceof HibernateProxy ? ((HibernateProxy) this)</b>
+<b class="nc">&nbsp;                .getHibernateLazyInitializer().getPersistentClass() : this.getClass();</b>
 <b class="fc">&nbsp;        if (thisEffectiveClass != oEffectiveClass) return false;</b>
 <b class="fc">&nbsp;        User user = (User) o;</b>
-<b class="fc">&nbsp;        return getId() != null &amp;&amp; Objects.equals(getId(), user.getId());</b>
+<b class="pc">&nbsp;        return getId() != null &amp;&amp; Objects.equals(getId(), user.getId());</b>
 &nbsp;    }
 &nbsp;
-&nbsp;//    @Override
-&nbsp;//    public final int hashCode() {
-&nbsp;//        return this instanceof HibernateProxy ? ((HibernateProxy) this).getHibernateLazyInitializer().getPersistentClass().hashCode() : getClass().hashCode();
-&nbsp;//    }
-&nbsp;
-&nbsp;@Override
-&nbsp;public int hashCode() {
-<b class="fc">&nbsp;    return Objects.hash(</b>
-&nbsp;            name, contactNo, dob, doj, designation, email, empId, location, password,
-&nbsp;            role, assignedSkills, empManagerId, empProjectId
-&nbsp;    );
-&nbsp;}
+&nbsp;    @Override
+&nbsp;    public int hashCode() {
+<b class="fc">&nbsp;        return Objects.hash(</b>
+&nbsp;                name, contactNo, dob, doj, designation, email, empId, location, password,
+&nbsp;                role, assignedSkills, empManagerId, empProjectId
+&nbsp;        );
+&nbsp;    }
 &nbsp;
 &nbsp;}
 </code>
@@ -346,7 +263,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2024-05-27 11:01</div>
+    <div style="float:right;">generated on 2024-06-16 00:16</div>
 </div>
 </body>
 </html>

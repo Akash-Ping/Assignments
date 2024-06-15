@@ -66,10 +66,10 @@ public class AdminService {
             if (user.getEmpManagerId() != null) {
                 Optional<User> manager = userRepository.findById(user.getEmpManagerId());
                 if (manager.isPresent()) {
-                   User managerUser = manager.get();
-                     registerOutDto.setManagerName(managerUser.getName());
-                     }
-                 }
+                    User managerUser = manager.get();
+                    registerOutDto.setManagerName(managerUser.getName());
+                }
+            }
 
             if (user.getEmpProjectId() != null) {
                 Optional<Project> projectEntity = projectRepository.findById(user.getEmpProjectId());
@@ -173,13 +173,13 @@ public class AdminService {
 
     public List<AssignProjectOutDto> getAllProjectsForAssign() {
         List<Project> projectEntities = projectRepository.findAll();
-       List<AssignProjectOutDto> assignProjectOutDtos = projectEntities.stream().map(project -> {
+        List<AssignProjectOutDto> assignProjectOutDtos = projectEntities.stream().map(project -> {
             AssignProjectOutDto assignProjectOutDto = new AssignProjectOutDto();
             assignProjectOutDto.setId(project.getId());
             assignProjectOutDto.setProjectName(project.getProjectName());
             return assignProjectOutDto;
         }).collect(Collectors.toList());
-       return assignProjectOutDtos;
+        return assignProjectOutDtos;
 
     }
 
@@ -243,8 +243,8 @@ public class AdminService {
         userRepository.deleteByEmpId(empId);
     }
 
-    public SkillsOutDto getEmployeeId(final String empId) {
-        User employee = userRepository.findByEmpId(empId).orElse(null);
+    public SkillsOutDto getEmployeeId(final String email) {
+        User employee = userRepository.findByEmail(email).orElse(null);
         SkillsOutDto skillsOutDto = new SkillsOutDto();
         if (employee != null) {
             skillsOutDto.setAssignedSkills(employee.getAssignedSkills());

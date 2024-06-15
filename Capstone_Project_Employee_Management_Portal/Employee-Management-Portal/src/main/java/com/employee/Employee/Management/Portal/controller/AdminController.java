@@ -16,6 +16,7 @@ import com.employee.Employee.Management.Portal.entity.Skills;
 import com.employee.Employee.Management.Portal.entity.User;
 import com.employee.Employee.Management.Portal.service.AdminService;
 import com.employee.Employee.Management.Portal.service.RegisterService;
+import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,7 +66,7 @@ public class AdminController {
     }
 
     @PostMapping("/addUser")
-    public final ApiResponseDto addUser(@RequestBody final RegisterDto registerDto) {
+    public final ApiResponseDto addUser(@Valid @RequestBody final RegisterDto registerDto) {
         logger.info("Started add user controller");
         ApiResponseDto response = registerService.addUser(registerDto);
         logger.info("Ended add user controller");
@@ -94,10 +95,10 @@ public class AdminController {
     }
 
 
-    @GetMapping("/Employees/{empId}")
-    public SkillsOutDto getEmployeesSkill(@PathVariable final String empId) {
+    @GetMapping("/Employees/{email}")
+    public SkillsOutDto getEmployeesSkill(@PathVariable final String email) {
         logger.info("Started get employee skill controller");
-        SkillsOutDto employees = adminService.getEmployeeId(empId);
+        SkillsOutDto employees = adminService.getEmployeeId(email);
         logger.info("Ended get employee skill controller");
         return employees;
     }
@@ -164,7 +165,7 @@ public class AdminController {
 
     @PostMapping("/assignProject")
     public ApiResponseDto assignProject(
-             @RequestBody final AssignProjectDto assignProjectDto) {
+            @RequestBody final AssignProjectDto assignProjectDto) {
         logger.info("Started assign project controller");
         ApiResponseDto apiResponseDto = adminService
                 .assignProject(assignProjectDto);
@@ -186,7 +187,7 @@ public class AdminController {
     public ApiResponseDto unassignProject(@PathVariable final String empId) {
         logger.info("Started unassign project controller");
         adminService.unassignProject(empId);
-       ApiResponseDto apiResponseDto = new ApiResponseDto();
+        ApiResponseDto apiResponseDto = new ApiResponseDto();
         apiResponseDto.setMessage("Project unassigned successfully");
         logger.info("Ended unassign project controller");
         return apiResponseDto;

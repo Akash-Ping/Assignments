@@ -34,6 +34,10 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 <th class="coverageStat 
 ">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
   Line, %
 </th>
 </tr>
@@ -49,10 +53,18 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    90%
+    75%
   </span>
   <span class="absValue">
-    (18/20)
+    (9/12)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    81.8%
+  </span>
+  <span class="absValue">
+    (18/22)
   </span>
 </td>
 </tr>
@@ -76,10 +88,22 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
   </tr>
   <tr>
-    <td class="name">Skills$HibernateInstantiator$luREhmNk</td>
+    <td class="name">Skills$HibernateInstantiator$asbXYFDz</td>
   </tr>
   <tr>
-    <td class="name">Skills$HibernateProxy$SHLsAgVM</td>
+    <td class="name">Skills$HibernateInstantiator$g2mk1bpP</td>
+  </tr>
+  <tr>
+    <td class="name">Skills$HibernateInstantiator$pKBLlUFd</td>
+  </tr>
+  <tr>
+    <td class="name">Skills$HibernateProxy$e1TPndgt</td>
+  </tr>
+  <tr>
+    <td class="name">Skills$HibernateProxy$I64JEC3m</td>
+  </tr>
+  <tr>
+    <td class="name">Skills$HibernateProxy$WnTsstRA</td>
   </tr>
 <tr>
   <td class="name"><strong>Total</strong></td>
@@ -93,10 +117,18 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    90.5%
+    75%
   </span>
   <span class="absValue">
-    (19/21)
+    (9/12)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    82.6%
+  </span>
+  <span class="absValue">
+    (19/23)
   </span>
 </td>
 </tr>
@@ -111,11 +143,22 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;
 &nbsp;
 &nbsp;import com.fasterxml.jackson.annotation.JsonBackReference;
-&nbsp;import jakarta.persistence.*;
-&nbsp;import lombok.*;
+&nbsp;import jakarta.persistence.Id;
+&nbsp;import jakarta.persistence.GeneratedValue;
+&nbsp;import jakarta.persistence.GenerationType;
+&nbsp;import jakarta.persistence.Column;
+&nbsp;import jakarta.persistence.Entity;
+&nbsp;import jakarta.persistence.ManyToMany;
+&nbsp;import jakarta.persistence.Table;
+&nbsp;import lombok.Getter;
+&nbsp;import lombok.Setter;
+&nbsp;import lombok.ToString;
+&nbsp;import lombok.AllArgsConstructor;
 &nbsp;import org.hibernate.proxy.HibernateProxy;
 &nbsp;
-&nbsp;import java.util.*;
+&nbsp;import java.util.Set;
+&nbsp;import java.util.HashSet;
+&nbsp;import java.util.Objects;
 &nbsp;
 &nbsp;@Entity
 &nbsp;@Getter
@@ -139,26 +182,20 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;
 &nbsp;
 &nbsp;    public Skills() {
-<b class="fc">&nbsp;    super();</b>
-&nbsp;}
-&nbsp;
-&nbsp;
-<b class="nc">&nbsp;    public Skills(String skillName) {</b>
-<b class="nc">&nbsp;        this.skillName = skillName;</b>
+<b class="fc">&nbsp;        super();</b>
 &nbsp;    }
 &nbsp;
 &nbsp;
-&nbsp;//    public Skills(Long id, String skillName, List&lt;User&gt; users) {
-&nbsp;//        this.id = id;
-&nbsp;//        this.skillName = skillName;
-&nbsp;//        this.users = users;
-&nbsp;//    }
+<b class="nc">&nbsp;    public Skills(final String skillName) {</b>
+<b class="nc">&nbsp;        this.skillName = skillName;</b>
+&nbsp;    }
+&nbsp;
 &nbsp;
 &nbsp;    public Long getId() {
 <b class="fc">&nbsp;        return id;</b>
 &nbsp;    }
 &nbsp;
-&nbsp;    public void setId(Long id) {
+&nbsp;    public void setId(final Long id) {
 <b class="fc">&nbsp;        this.id = id;</b>
 &nbsp;    }
 &nbsp;
@@ -166,7 +203,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;        return skillName;</b>
 &nbsp;    }
 &nbsp;
-&nbsp;    public void setSkillName(String skillName) {
+&nbsp;    public void setSkillName(final String skillName) {
 <b class="fc">&nbsp;        this.skillName = skillName;</b>
 &nbsp;    }
 &nbsp;
@@ -174,43 +211,29 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;        return users;</b>
 &nbsp;    }
 &nbsp;
-&nbsp;    public void setUsers(Set&lt;User&gt; users) {
+&nbsp;    public void setUsers(final Set&lt;User&gt; users) {
 <b class="fc">&nbsp;        this.users = users;</b>
 &nbsp;    }
-&nbsp;//
-&nbsp;//    @Override
-&nbsp;//    public String toString() {
-&nbsp;//        return &quot;Skills{&quot; +
-&nbsp;//                &quot;id=&quot; + id +
-&nbsp;//                &quot;, skillName=&#39;&quot; + skillName + &#39;\&#39;&#39; +
-&nbsp;//                &quot;, users=&quot; + users +
-&nbsp;//                &#39;}&#39;;
-&nbsp;//    }
 &nbsp;
-&nbsp;//    @Override
-&nbsp;//    public String toString() {
-&nbsp;//        return &quot;Skills(id=&quot; + id + &quot;)&quot;;
-&nbsp;//    }
 &nbsp;
 &nbsp;    @Override
-&nbsp;    public final boolean equals(Object o) {
+&nbsp;    public final boolean equals(final Object o) {
 <b class="fc">&nbsp;        if (this == o) return true;</b>
 <b class="fc">&nbsp;        if (o == null) return false;</b>
-<b class="fc">&nbsp;        Class&lt;?&gt; oEffectiveClass = o instanceof HibernateProxy ? ((HibernateProxy) o).getHibernateLazyInitializer().getPersistentClass() : o.getClass();</b>
-<b class="fc">&nbsp;        Class&lt;?&gt; thisEffectiveClass = this instanceof HibernateProxy ? ((HibernateProxy) this).getHibernateLazyInitializer().getPersistentClass() : this.getClass();</b>
+<b class="pc">&nbsp;        Class&lt;?&gt; oEffectiveClass = o instanceof HibernateProxy ? ((HibernateProxy) o)</b>
+<b class="nc">&nbsp;                .getHibernateLazyInitializer().getPersistentClass() : o.getClass();</b>
+<b class="pc">&nbsp;        Class&lt;?&gt; thisEffectiveClass = this instanceof HibernateProxy ? ((HibernateProxy) this)</b>
+<b class="nc">&nbsp;                .getHibernateLazyInitializer().getPersistentClass() : this.getClass();</b>
 <b class="fc">&nbsp;        if (thisEffectiveClass != oEffectiveClass) return false;</b>
 <b class="fc">&nbsp;        Skills skills = (Skills) o;</b>
-<b class="fc">&nbsp;        return getId() != null &amp;&amp; Objects.equals(getId(), skills.getId());</b>
+<b class="pc">&nbsp;        return getId() != null &amp;&amp; Objects.equals(getId(), skills.getId());</b>
 &nbsp;    }
 &nbsp;
-&nbsp;//    @Override
-&nbsp;//    public final int hashCode() {
-&nbsp;//        return this instanceof HibernateProxy ? ((HibernateProxy) this).getHibernateLazyInitializer().getPersistentClass().hashCode() : getClass().hashCode();
-&nbsp;//    }
-&nbsp;@Override
-&nbsp;public final int hashCode() {
-<b class="fc">&nbsp;    return Objects.hash(id, skillName);</b>
-&nbsp;}
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public final int hashCode() {
+<b class="fc">&nbsp;        return Objects.hash(id, skillName);</b>
+&nbsp;    }
 &nbsp;
 &nbsp;}
 </code>
@@ -236,7 +259,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2024-05-27 11:01</div>
+    <div style="float:right;">generated on 2024-06-16 00:16</div>
 </div>
 </body>
 </html>

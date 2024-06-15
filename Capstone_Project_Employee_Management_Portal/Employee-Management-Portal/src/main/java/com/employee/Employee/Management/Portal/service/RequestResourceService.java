@@ -73,7 +73,7 @@ public class RequestResourceService {
         List<Project> projectList = projectRepository.findAllByManager(manager.get());
         List<RequestResourceManagerProjectDto> projectOutList = new ArrayList<RequestResourceManagerProjectDto>();
 
-         for (Project project : projectList) {
+        for (Project project : projectList) {
             RequestResourceManagerProjectDto projectOut = new RequestResourceManagerProjectDto();
             projectOut.setId(project.getId());
             projectOut.setProjectName(project.getProjectName());
@@ -86,16 +86,16 @@ public class RequestResourceService {
     public List<ResourceRequestsAdminOutDto> getAllResourceRequests() {
         List<Resource> requestList = resourceRepository.findAll();
 
-         if (requestList.isEmpty()) {
+        if (requestList.isEmpty()) {
             throw new DataNotFoundException("No requests found");
         }
 
         List<ResourceRequestsAdminOutDto> outRequestList = new ArrayList<ResourceRequestsAdminOutDto>();
-         for (Resource resource : requestList) {
+        for (Resource resource : requestList) {
             ResourceRequestsAdminOutDto outRequest = new ResourceRequestsAdminOutDto();
 
             User employee = userRepository.findById(resource.getEmployeeId()).orElse(null);
-                if (employee == null) {
+            if (employee == null) {
                 resourceRepository.deleteById(resource.getId());
             }
 
@@ -123,7 +123,7 @@ public class RequestResourceService {
 
     public ApiResponseDto acceptRequest(final Long id) {
         Resource resource = resourceRepository.findById(id).orElse(null);
-            if (resource == null) {
+        if (resource == null) {
             throw new DataNotFoundException("Resource not found");
         }
         User employee = userRepository.findById(resource.getEmployeeId()).orElse(null);
@@ -141,12 +141,12 @@ public class RequestResourceService {
         rejectResourceRequest(id);
 
         List<Resource> employeeRequests = resourceRepository.findByEmployeeId(employee.getId());
-            for (Resource request : employeeRequests) {
+        for (Resource request : employeeRequests) {
             rejectResourceRequest(request.getId());
-            }
+        }
         ApiResponseDto apiResponseDto = new ApiResponseDto();
         apiResponseDto.setMessage("Resource request accepted successfully");
         return apiResponseDto;
-        }
+    }
 
 }

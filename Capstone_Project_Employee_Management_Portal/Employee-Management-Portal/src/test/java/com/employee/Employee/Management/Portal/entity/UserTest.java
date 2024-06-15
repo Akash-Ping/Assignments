@@ -263,7 +263,7 @@ public class UserTest {
         assertNotEquals(user1.hashCode(), differentUser.hashCode());
 
 
-    // Ensure hash codes are generated based on all relevant fields
+        // Ensure hash codes are generated based on all relevant fields
         assertEquals(user1.hashCode(), user1.hashCode());
     }
 

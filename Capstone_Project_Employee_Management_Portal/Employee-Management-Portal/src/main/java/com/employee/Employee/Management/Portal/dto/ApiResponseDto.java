@@ -38,8 +38,8 @@ public class ApiResponseDto {
 
     @Override
     public String toString() {
-         return "ApiResponseDto{"
-                 + "message='" + message + '\''
-                  + '}';
+        return "ApiResponseDto{"
+                + "message='" + message + '\''
+                + '}';
     }
 }

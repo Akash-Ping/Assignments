@@ -41,8 +41,8 @@ public class Skills {
 
 
     public Skills() {
-    super();
-}
+        super();
+    }
 
 
     public Skills(final String skillName) {
@@ -89,9 +89,9 @@ public class Skills {
     }
 
 
-@Override
-public final int hashCode() {
-    return Objects.hash(id, skillName);
-}
+    @Override
+    public final int hashCode() {
+        return Objects.hash(id, skillName);
+    }
 
 }

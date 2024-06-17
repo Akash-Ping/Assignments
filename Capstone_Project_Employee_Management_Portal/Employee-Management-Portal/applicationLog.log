@@ -831,3 +831,165 @@
 2024-06-16T00:21:54.948+05:30  INFO 31704 --- [Employee-Management-Portal] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-06-16T00:21:54.949+05:30  INFO 31704 --- [Employee-Management-Portal] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
 2024-06-16T00:21:54.953+05:30  INFO 31704 --- [Employee-Management-Portal] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2024-06-16T00:44:49.639+05:30  INFO 10444 --- [Employee-Management-Portal] [restartedMain] .M.P.EmployeeManagementPortalApplication : Starting EmployeeManagementPortalApplication using Java 17.0.10 with PID 10444 (D:\1_VERY_VERY_DEV\Training\Assignments\Capstone_Project_Employee_Management_Portal\Employee-Management-Portal\target\classes started by LEGION in D:\1_VERY_VERY_DEV\Training\Assignments\Capstone_Project_Employee_Management_Portal\Employee-Management-Portal)
+2024-06-16T00:44:49.643+05:30  INFO 10444 --- [Employee-Management-Portal] [restartedMain] .M.P.EmployeeManagementPortalApplication : No active profile set, falling back to 1 default profile: "default"
+2024-06-16T00:44:49.716+05:30  INFO 10444 --- [Employee-Management-Portal] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-16T00:44:49.717+05:30  INFO 10444 --- [Employee-Management-Portal] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-16T00:44:50.782+05:30  INFO 10444 --- [Employee-Management-Portal] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-16T00:44:50.891+05:30  INFO 10444 --- [Employee-Management-Portal] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 91 ms. Found 4 JPA repository interfaces.
+2024-06-16T00:44:51.764+05:30  INFO 10444 --- [Employee-Management-Portal] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-16T00:44:51.779+05:30  INFO 10444 --- [Employee-Management-Portal] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-16T00:44:51.779+05:30  INFO 10444 --- [Employee-Management-Portal] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-06-16T00:44:51.847+05:30  INFO 10444 --- [Employee-Management-Portal] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-16T00:44:51.847+05:30  INFO 10444 --- [Employee-Management-Portal] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2130 ms
+2024-06-16T00:44:52.055+05:30  INFO 10444 --- [Employee-Management-Portal] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-16T00:44:52.129+05:30  INFO 10444 --- [Employee-Management-Portal] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-16T00:44:52.173+05:30  INFO 10444 --- [Employee-Management-Portal] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-16T00:44:52.575+05:30  INFO 10444 --- [Employee-Management-Portal] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-16T00:44:52.604+05:30  INFO 10444 --- [Employee-Management-Portal] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-16T00:44:52.902+05:30  INFO 10444 --- [Employee-Management-Portal] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1d138ccf
+2024-06-16T00:44:52.906+05:30  INFO 10444 --- [Employee-Management-Portal] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-16T00:44:54.393+05:30  INFO 10444 --- [Employee-Management-Portal] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-16T00:44:54.506+05:30  INFO 10444 --- [Employee-Management-Portal] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-16T00:44:55.259+05:30  WARN 10444 --- [Employee-Management-Portal] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-16T00:44:55.615+05:30  INFO 10444 --- [Employee-Management-Portal] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@45227e6e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@dd70ab0, org.springframework.security.web.context.SecurityContextHolderFilter@6c8ed1e, org.springframework.security.web.header.HeaderWriterFilter@67bceea3, org.springframework.web.filter.CorsFilter@734982a2, org.springframework.security.web.authentication.logout.LogoutFilter@23745bf1, com.employee.Employee.Management.Portal.config.JwtTokenValidator@10cd36e7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2f4c4b67, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6493c041, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@464aeb9e, org.springframework.security.web.session.SessionManagementFilter@3146cd7d, org.springframework.security.web.access.ExceptionTranslationFilter@21ebba8b, org.springframework.security.web.access.intercept.AuthorizationFilter@487019bb]
+2024-06-16T00:44:55.892+05:30  INFO 10444 --- [Employee-Management-Portal] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-06-16T00:44:55.925+05:30  INFO 10444 --- [Employee-Management-Portal] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-06-16T00:44:55.936+05:30  INFO 10444 --- [Employee-Management-Portal] [restartedMain] .M.P.EmployeeManagementPortalApplication : Started EmployeeManagementPortalApplication in 6.846 seconds (process running for 7.349)
+2024-06-16T00:45:02.727+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-16T00:45:02.728+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-16T00:45:02.729+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-06-16T00:45:03.587+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-2] c.e.E.M.P.controller.AdminController     : Started get all employees controller
+2024-06-16T00:45:03.641+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-2] c.e.E.M.P.controller.AdminController     : Ended get all employees controller
+2024-06-16T00:45:10.200+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-3] c.e.E.M.P.controller.AdminController     : Started get all managers controller
+2024-06-16T00:45:10.222+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-3] c.e.E.M.P.controller.AdminController     : Ended get all managers controller
+2024-06-16T00:45:10.251+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-4] c.e.E.M.P.controller.AdminController     : Started get all projects by manager id controller
+2024-06-16T00:45:10.252+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-6] c.e.E.M.P.controller.AdminController     : Started get all projects by manager id controller
+2024-06-16T00:45:10.254+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-5] c.e.E.M.P.controller.AdminController     : Started get all projects by manager id controller
+2024-06-16T00:45:10.257+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-7] c.e.E.M.P.controller.AdminController     : Started get all projects by manager id controller
+2024-06-16T00:45:10.258+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-8] c.e.E.M.P.controller.AdminController     : Started get all projects by manager id controller
+2024-06-16T00:45:10.259+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-9] c.e.E.M.P.controller.AdminController     : Started get all projects by manager id controller
+2024-06-16T00:45:10.275+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-4] c.e.E.M.P.controller.AdminController     : Ended get all projects by manager id controller
+2024-06-16T00:45:10.278+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-5] c.e.E.M.P.controller.AdminController     : Ended get all projects by manager id controller
+2024-06-16T00:45:10.279+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-7] c.e.E.M.P.controller.AdminController     : Ended get all projects by manager id controller
+2024-06-16T00:45:10.281+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-6] c.e.E.M.P.controller.AdminController     : Ended get all projects by manager id controller
+2024-06-16T00:45:10.288+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-10] c.e.E.M.P.controller.AdminController     : Started get all projects by manager id controller
+2024-06-16T00:45:10.288+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-2] c.e.E.M.P.controller.AdminController     : Started get all projects by manager id controller
+2024-06-16T00:45:10.288+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-1] c.e.E.M.P.controller.AdminController     : Started get all projects by manager id controller
+2024-06-16T00:45:10.289+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-9] c.e.E.M.P.controller.AdminController     : Ended get all projects by manager id controller
+2024-06-16T00:45:10.294+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-8] c.e.E.M.P.controller.AdminController     : Ended get all projects by manager id controller
+2024-06-16T00:45:10.294+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-3] c.e.E.M.P.controller.AdminController     : Started get all projects by manager id controller
+2024-06-16T00:45:10.298+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-2] c.e.E.M.P.controller.AdminController     : Ended get all projects by manager id controller
+2024-06-16T00:45:10.300+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-9] c.e.E.M.P.controller.AdminController     : Started get all projects by manager id controller
+2024-06-16T00:45:10.300+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-10] c.e.E.M.P.controller.AdminController     : Ended get all projects by manager id controller
+2024-06-16T00:45:10.303+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-3] c.e.E.M.P.controller.AdminController     : Ended get all projects by manager id controller
+2024-06-16T00:45:10.303+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-1] c.e.E.M.P.controller.AdminController     : Ended get all projects by manager id controller
+2024-06-16T00:45:10.321+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-9] c.e.E.M.P.controller.AdminController     : Ended get all projects by manager id controller
+2024-06-16T00:45:40.054+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-4] c.e.E.M.P.controller.AdminController     : Started get all employees controller
+2024-06-16T00:45:40.070+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-4] c.e.E.M.P.controller.AdminController     : Ended get all employees controller
+2024-06-16T00:45:42.145+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-7] c.e.E.M.P.controller.AdminController     : Started get all projects controller
+2024-06-16T00:45:42.218+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-7] c.e.E.M.P.controller.AdminController     : Ended get all projects controller
+2024-06-16T00:45:44.158+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-6] c.e.E.M.P.controller.AdminController     : Started get all managers controller
+2024-06-16T00:45:44.177+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-6] c.e.E.M.P.controller.AdminController     : Ended get all managers controller
+2024-06-16T00:45:44.202+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-8] c.e.E.M.P.controller.AdminController     : Started get all projects by manager id controller
+2024-06-16T00:45:44.202+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-2] c.e.E.M.P.controller.AdminController     : Started get all projects by manager id controller
+2024-06-16T00:45:44.208+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-10] c.e.E.M.P.controller.AdminController     : Started get all projects by manager id controller
+2024-06-16T00:45:44.209+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-8] c.e.E.M.P.controller.AdminController     : Ended get all projects by manager id controller
+2024-06-16T00:45:44.211+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-2] c.e.E.M.P.controller.AdminController     : Ended get all projects by manager id controller
+2024-06-16T00:45:44.213+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-10] c.e.E.M.P.controller.AdminController     : Ended get all projects by manager id controller
+2024-06-16T00:45:44.216+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-3] c.e.E.M.P.controller.AdminController     : Started get all projects by manager id controller
+2024-06-16T00:45:44.219+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-1] c.e.E.M.P.controller.AdminController     : Started get all projects by manager id controller
+2024-06-16T00:45:44.223+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-3] c.e.E.M.P.controller.AdminController     : Ended get all projects by manager id controller
+2024-06-16T00:45:44.224+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-9] c.e.E.M.P.controller.AdminController     : Started get all projects by manager id controller
+2024-06-16T00:45:44.226+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-4] c.e.E.M.P.controller.AdminController     : Started get all projects by manager id controller
+2024-06-16T00:45:44.233+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-4] c.e.E.M.P.controller.AdminController     : Ended get all projects by manager id controller
+2024-06-16T00:45:44.237+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-1] c.e.E.M.P.controller.AdminController     : Ended get all projects by manager id controller
+2024-06-16T00:45:44.238+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-9] c.e.E.M.P.controller.AdminController     : Ended get all projects by manager id controller
+2024-06-16T00:45:44.239+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-5] c.e.E.M.P.controller.AdminController     : Started get all projects by manager id controller
+2024-06-16T00:45:44.241+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-7] c.e.E.M.P.controller.AdminController     : Started get all projects by manager id controller
+2024-06-16T00:45:44.247+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-7] c.e.E.M.P.controller.AdminController     : Ended get all projects by manager id controller
+2024-06-16T00:45:44.251+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-5] c.e.E.M.P.controller.AdminController     : Ended get all projects by manager id controller
+2024-06-16T00:45:44.262+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-6] c.e.E.M.P.controller.AdminController     : Started get all projects by manager id controller
+2024-06-16T00:45:44.276+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-6] c.e.E.M.P.controller.AdminController     : Ended get all projects by manager id controller
+2024-06-16T00:45:44.299+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-8] c.e.E.M.P.controller.AdminController     : Started get all projects by manager id controller
+2024-06-16T00:45:44.315+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-8] c.e.E.M.P.controller.AdminController     : Ended get all projects by manager id controller
+2024-06-16T00:45:53.435+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-2] c.e.E.M.P.controller.AdminController     : Started get all employees controller
+2024-06-16T00:45:53.447+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-2] c.e.E.M.P.controller.AdminController     : Ended get all employees controller
+2024-06-16T00:46:12.688+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-4] c.e.E.M.P.controller.EmployeeController  : Started get employee by email controller
+2024-06-16T00:46:12.693+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-4] c.e.E.M.P.controller.EmployeeController  : Ended get employee by email controller
+2024-06-16T00:46:36.431+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-1] c.e.E.M.P.controller.EmployeeController  : Started get employee by email controller
+2024-06-16T00:46:36.438+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-1] c.e.E.M.P.controller.EmployeeController  : Ended get employee by email controller
+2024-06-16T00:46:48.864+05:30 ERROR 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+org.springframework.security.authentication.BadCredentialsException: invalid token...
+	at com.employee.Employee.Management.Portal.config.JwtTokenValidator.doFilterInternal(JwtTokenValidator.java:52) ~[classes/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.4.jar:6.2.4]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.2.4.jar:6.2.4]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.2.4.jar:6.2.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.4.jar:6.2.4]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.4.jar:6.2.4]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.2.4.jar:6.2.4]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.2.4.jar:6.2.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.4.jar:6.2.4]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.2.4.jar:6.2.4]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.2.4.jar:6.2.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.4.jar:6.2.4]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.2.4.jar:6.2.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.4.jar:6.2.4]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.2.4.jar:6.2.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.4.jar:6.2.4]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.2.4.jar:6.2.4]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.2.4.jar:6.2.4]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230) ~[spring-security-config-6.2.4.jar:6.2.4]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+
+2024-06-16T00:47:03.334+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-4] c.e.E.M.P.controller.AdminController     : Started get all employees controller
+2024-06-16T00:47:03.348+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-4] c.e.E.M.P.controller.AdminController     : Ended get all employees controller
+2024-06-16T00:47:40.128+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-7] c.e.E.M.P.controller.AdminController     : Started get all employees controller
+2024-06-16T00:47:40.147+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-7] c.e.E.M.P.controller.AdminController     : Ended get all employees controller
+2024-06-16T00:48:37.734+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-10] c.e.E.M.P.controller.AdminController     : Started get all employees controller
+2024-06-16T00:48:37.744+05:30  INFO 10444 --- [Employee-Management-Portal] [http-nio-8080-exec-10] c.e.E.M.P.controller.AdminController     : Ended get all employees controller
+2024-06-16T00:49:12.771+05:30  INFO 10444 --- [Employee-Management-Portal] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-16T00:49:12.773+05:30  INFO 10444 --- [Employee-Management-Portal] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-16T00:49:12.776+05:30  INFO 10444 --- [Employee-Management-Portal] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

@@ -167,7 +167,7 @@ public class RegisterServiceTest {
         addUserDto.setRole(Role.MANAGER);
         addUserDto.setAssignedSkills(Set.of(1L));
 
-        when(userRepository.findByEmail("user@nucleusteq.com")).thenReturn(Optional.empty());
+        when(userRepository.findByEmail("user@example.com")).thenReturn(Optional.empty());
         when(userRepository.findByEmpId("E002")).thenReturn(Optional.empty());
         when(passwordEncoder.encode("password")).thenReturn("hashedPassword");
         when(skillsRepository.findAllById(List.of(1L))).thenReturn(List.of(new Skills()));
@@ -199,7 +199,7 @@ public class RegisterServiceTest {
         addUserDto.setEmail("user@nucleusteq.com");
         addUserDto.setEmpId("E002");
 
-        when(userRepository.findByEmail("user@nucleusteq.com")).thenReturn(Optional.empty());
+        when(userRepository.findByEmail("user@example.com")).thenReturn(Optional.empty());
         when(userRepository.findByEmpId("E002")).thenReturn(Optional.of(new User()));
 
         ApiResponseDto response = registerService.addUser(addUserDto);

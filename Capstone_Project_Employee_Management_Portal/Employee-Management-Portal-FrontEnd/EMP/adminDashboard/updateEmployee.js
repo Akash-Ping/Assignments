@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
     }
 
+
+    
     const payload = JSON.parse(atob(jwtToken.split('.')[1]));
     const userRole = payload.authorities;
 

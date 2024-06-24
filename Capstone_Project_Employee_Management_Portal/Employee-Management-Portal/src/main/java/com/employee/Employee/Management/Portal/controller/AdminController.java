@@ -54,7 +54,7 @@ public class AdminController {
 
     @GetMapping("/all")
     public final List<User> getAllEmployee() {
-        logger.info("Started the get userDetails controller");
+        logger.info("Started get userDetails controller");
         List<User> users = registerService.getUserDetails();
         logger.info("Ended get userDetails controller");
         return users;

@@ -36,6 +36,8 @@ public class GlobalExceptionHandlerTest {
         assertEquals("Data not found", response.getMessage());
     }
 
+
+
     @Test
     public void testDataAlreadyExistsExceptionHandler() {
         DataAlreadyExistsException ex = new DataAlreadyExistsException("Data already exists");

@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  # Unique key of the Deployment instance
+  name: node-file-app
+spec:
+  # 1 Pods should exist at all times.
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node-file-app
+  template:
+    metadata:
+      labels:
+        app: node-file-app
+    spec:
+      containers:
+      - name: node-file-app
+        # Run this image
+        image: philippaul/node-file-demo:01
+        volumeMounts:
+          - mountPath: /app/emails.txt
+            name: myvol
+      volumes:
+        - name: myvol
+          hostPath:
+            path: /data/emails.txt
+            type: FileOrCreate
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  # Unique key of the Service instance
+  name: service-node-file-app
+spec:
+  ports:
+    # Accept traffic sent to port 80
+    - name: http
+      port: 8082
+      targetPort: 3000
+  selector:
+    # Loadbalance traffic across Pods matching
+    # this label selector
+    app: node-file-app
+  # Create an HA proxy in the cloud provider
+  # with an External IP address - *Only supported
+  # by some cloud providers*
+  type: LoadBalancer
+        

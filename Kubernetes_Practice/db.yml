@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  # Unique key of the Deployment instance
+  name: my-dbs-app
+spec:
+  # 3 Pods should exist at all times.
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-db-app
+  template:
+    metadata:
+      labels:
+        # Apply this label to pods and default
+        # the Deployment label selector to this value
+        app: my-db-app
+    spec:
+      containers:
+      - name: my-db-app
+        # Run this image
+        image: mongo
+        volumeMounts:
+          - mountPath: /data/db
+            name: db-vol
+      volumes:
+        - name: db-vol
+          persistentVolumeClaim:
+            claimName: host-pvc
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  # Unique key of the Service instance
+  name: service-db
+spec:
+  selector:
+    app: my-db-app
+  ports:
+    - name: tcp
+      port: 27017
+      targetPort: 27017
+  
+        

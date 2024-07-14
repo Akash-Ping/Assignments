@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: db-config
+data:
+  MONGO_HOST: "service-db"
+  MONGO_PORT: "27017"
